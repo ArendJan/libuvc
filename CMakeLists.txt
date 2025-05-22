@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.22)
 project(libuvc
   VERSION 0.0.7
   LANGUAGES C
