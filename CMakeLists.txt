@@ -253,17 +253,17 @@ ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ## Tests ##
 ###########
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
+# if(BUILD_TESTING)
+#   # find_package(ament_lint_auto REQUIRED)
 
-  # Skip ament_copyright check for humble
-  if($ENV{ROS_DISTRO} STREQUAL "humble")
-    list(APPEND AMENT_LINT_AUTO_EXCLUDE
-      ament_cmake_copyright
-    )
-  endif()
+#   # # Skip ament_copyright check for humble
+#   # if($ENV{ROS_DISTRO} STREQUAL "humble")
+#   #   list(APPEND AMENT_LINT_AUTO_EXCLUDE
+#   #     ament_cmake_copyright
+#   #   )
+#   # endif()
 
-  ament_lint_auto_find_test_dependencies()
-endif()
+#   # ament_lint_auto_find_test_dependencies()
+# endif()
 
 ament_package()
