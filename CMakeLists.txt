@@ -220,7 +220,7 @@ configure_file(libuvc.pc.in
 )
 
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/libuvc.pc
+  ${PROJECT_BINARY_DIR}/libuvc.pc
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
 )
 

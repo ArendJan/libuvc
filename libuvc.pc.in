@@ -5,7 +5,7 @@ Name: libuvc
 Description: @libuvc_DESCRIPTION@
 URL: @libuvc_URL@
 Version: @libuvc_VERSION@
-Libs: -L${libdir}
+Libs: -L${libdir} -luvc
 Libs.private: -lusb-1.0 @PKGCONFIG_JPEG_LDFLAG@
 Cflags: -I${includedir}
 Requires: libusb-1.0
