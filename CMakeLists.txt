@@ -236,15 +236,16 @@ install(
 
 install(
   TARGETS ${UVC_TARGETS}
-  EXPORT export_${PROJECT_NAME}
+  EXPORT uvc
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin
   INCLUDES DESTINATION include
 
 )
-ament_export_targets(uvc HAS_LIBRARY_TARGET)
-ament_export_targets(uvc_static HAS_LIBRARY_TARGET)
+ament_export_targets(uvc)
+# ament_export_targets(UVCShared HAS_LIBRARY_TARGET)
+# ament_export_targets(UVCStatic HAS_LIBRARY_TARGET)
 # set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 # install(
 #   TARGETS ${PROJECT_NAME}_node
