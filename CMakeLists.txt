@@ -240,9 +240,11 @@ install(
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin
-)
-ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
+  INCLUDES DESTINATION include
 
+)
+ament_export_targets(uvc HAS_LIBRARY_TARGET)
+ament_export_targets(uvc_static HAS_LIBRARY_TARGET)
 # set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 # install(
 #   TARGETS ${PROJECT_NAME}_node
