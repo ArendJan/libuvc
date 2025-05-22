@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.30)
 project(libuvc
   VERSION 0.0.7
   LANGUAGES C
 )
+find_package(ament_cmake_ros REQUIRED)
 
 # Additional search scripts path for libusb-1.0, libjpeg, OpenCV
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
@@ -228,3 +229,41 @@ install(FILES libuvcConfig.cmake
 )
 
 
+install(
+  DIRECTORY include/
+  DESTINATION include/${PROJECT_NAME}
+)
+
+install(
+  TARGETS ${UVC_TARGETS}
+  EXPORT export_${PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
+
+# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
+# install(
+#   TARGETS ${PROJECT_NAME}_node
+#   DESTINATION lib/${PROJECT_NAME}
+# )
+
+###########
+## Tests ##
+###########
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+
+  # Skip ament_copyright check for humble
+  if($ENV{ROS_DISTRO} STREQUAL "humble")
+    list(APPEND AMENT_LINT_AUTO_EXCLUDE
+      ament_cmake_copyright
+    )
+  endif()
+
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+ament_package()
