@@ -16,7 +16,7 @@
   <build_depend>libusb-1.0</build_depend>
   <exec_depend>libusb-1.0</exec_depend>
     <exec_depend>libusb-1.0-dev</exec_depend>
-
+  <depend>libjpeg</depend>
   <export>
     <build_type>ament_cmake</build_type>
   </export>
